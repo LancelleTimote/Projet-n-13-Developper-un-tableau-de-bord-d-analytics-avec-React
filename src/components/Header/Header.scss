@@ -1,0 +1,33 @@
+@import "../../style/Utils/Variables.scss";
+
+.header {
+    display: flex;
+    align-items: center;
+    background-color: $tertiary-color;
+    font-size: 24px;
+    &_logo {
+        margin-left: 25px;
+        width: 20%;
+        display: flex;
+        align-items: center;
+        &_img {
+        }
+        &_txt {
+            margin-left: 10px;
+            color: $primary-color;
+        }
+    }
+    &_nav {
+        margin-right: 75px;
+        width: 80%;
+        &_list {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            a {
+                color: $secondary-color;
+                text-decoration: none;
+            }
+        }
+    }
+}
