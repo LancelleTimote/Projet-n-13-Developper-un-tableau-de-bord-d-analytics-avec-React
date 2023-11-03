@@ -1,0 +1,9 @@
+.errorPage {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    &_mid {
+        display: flex;
+        flex-grow: 1;
+    }
+}
