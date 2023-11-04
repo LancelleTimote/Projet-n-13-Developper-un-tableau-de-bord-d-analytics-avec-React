@@ -7,6 +7,7 @@ function App() {
         <Router>
             <main>
                 <Routes>
+                    {/* <Route path="/user/:id" element={<Home />} /> */}
                     <Route path="/" element={<Home />} />
                     <Route path="*" element={<Error />} />
                 </Routes>
