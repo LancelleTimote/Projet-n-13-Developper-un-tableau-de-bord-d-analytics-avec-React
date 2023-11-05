@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home/Home";
+import Profil from "./pages/Profil/Profil";
 import Error from "./pages/ErrorPage/ErrorPage";
 
 function App() {
@@ -7,8 +7,7 @@ function App() {
         <Router>
             <main>
                 <Routes>
-                    {/* <Route path="/user/:id" element={<Home />} /> */}
-                    <Route path="/" element={<Home />} />
+                    <Route path="/profil/user/:id" element={<Profil />} />
                     <Route path="*" element={<Error />} />
                 </Routes>
             </main>

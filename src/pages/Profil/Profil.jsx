@@ -1,27 +1,28 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom"; // Importez useParams
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { getUserData } from "../../services/callAPI";
-import "./Home.scss";
+import "./Profil.scss";
 import UserActivity from "../../components/UserActivity/UserActivity";
 import mockData from "../../mock/mockData.json";
 
-function Home() {
+function Profil() {
     const [firstName, setFirstName] = useState("");
+    const { id } = useParams();
 
     useEffect(() => {
-        const userId = 12;
         const useMockData = true;
 
         const fetchUserData = async () => {
             if (useMockData) {
-                const user = mockData.USER_MAIN_DATA.find((user) => user.id === userId);
+                const user = mockData.USER_MAIN_DATA.find((user) => user.id === Number(id));
                 if (user && user.userInfos && user.userInfos.firstName) {
                     setFirstName(user.userInfos.firstName);
                 }
             } else {
                 try {
-                    const userData = await getUserData(userId);
+                    const userData = await getUserData(id);
                     if (userData && userData.data && userData.data.userInfos) {
                         setFirstName(userData.data.userInfos.firstName);
                     }
@@ -32,7 +33,7 @@ function Home() {
         };
 
         fetchUserData();
-    }, []);
+    }, [id]);
 
     return (
         <div>
@@ -49,4 +50,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Profil;

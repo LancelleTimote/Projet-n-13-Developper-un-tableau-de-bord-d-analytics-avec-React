@@ -15,7 +15,7 @@ function Header() {
                         <Link to={`/`}>Accueil</Link>
                     </li>
                     <li>
-                        <Link to={`/profil`}>Profil</Link>
+                        <Link to={`/profil/user/:id`}>Profil</Link>
                     </li>
                     <li>
                         <Link to={`/setting`}>Réglage</Link>
