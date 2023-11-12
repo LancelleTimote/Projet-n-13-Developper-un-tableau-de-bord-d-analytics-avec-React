@@ -1,40 +1,26 @@
-import React, { useEffect, useState } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import { getUserActivity } from "../../services/callAPI";
 
-function UserActivity() {
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        const userId = 12;
-
-        const fetchData = async () => {
-            try {
-                const userData = await getUserActivity(userId);
-                if (userData && userData.sessions) {
-                    const formattedData = userData.sessions.map((session) => ({
-                        name: session.day,
-                        calories: session.calories,
-                    }));
-                    setData(formattedData);
-                }
-            } catch (error) {
-                console.error("Erreur lors de la récupération des données d'activité", error);
-            }
-        };
-
-        fetchData();
-    }, []);
-
+function UserActivity({ data }) {
     return (
         <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={data}>
+            <BarChart
+                data={data}
+                margin={{
+                    top: 5,
+                    right: 30,
+                    left: 20,
+                    bottom: 5,
+                }}
+                barSize={10}
+                barGap={10}
+            >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
+                <XAxis dataKey="day" />
+                <YAxis orientation="right" tickLine={false} />
                 <Tooltip />
-                <Legend />
-                <Bar dataKey="calories" fill="#8884d8" />
+                <Legend verticalAlign="top" align="right" iconType="circle" height={76} />
+                <Bar dataKey="kilogram" fill="black" name="Poids (kg)" radius={[10, 10, 0, 0]} />
+                <Bar dataKey="calories" fill="red" name="Calories brûlées (kCal)" radius={[10, 10, 0, 0]} />
             </BarChart>
         </ResponsiveContainer>
     );
