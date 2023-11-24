@@ -1,0 +1,21 @@
+@import "../../style/Utils/Variables.scss";
+
+.profil_container {
+    &_middle {
+        display: flex;
+        &_content {
+            padding: 15px 95px;
+            &_greetings {
+                font-size: 48px;
+                margin-bottom: 20px;
+                &_name {
+                    color: $primary-color;
+                }
+            }
+            p {
+                font-size: 18px;
+                margin: 10px 0 75px 0;
+            }
+        }
+    }
+}

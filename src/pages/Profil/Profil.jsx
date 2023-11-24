@@ -12,7 +12,8 @@ function Profil() {
     const [firstName, setFirstName] = useState("");
     const [userActivityData, setUserActivityData] = useState({});
     const { id } = useParams();
-    const useMockData = false;
+    const useMockData = true;
+    const graphUserActivityTitle = "Activité quotidienne";
 
     useEffect(() => {
         const fetchData = async () => {
@@ -24,14 +25,16 @@ function Profil() {
     }, [id, useMockData]);
 
     return (
-        <div>
+        <div className="profil_container">
             <Header />
-            <div>
+            <div className="profil_container_middle">
                 <Footer />
-                <div>
-                    <h1>Bonjour {firstName}</h1>
+                <div className="profil_container_middle_content">
+                    <h1 className="profil_container_middle_content_greetings">
+                        Bonjour <span className="profil_container_middle_content_greetings_name">{firstName}</span>
+                    </h1>
                     <p>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
-                    <UserActivity data={userActivityData} />
+                    <UserActivity data={userActivityData} graphTitle={graphUserActivityTitle} />
                 </div>
             </div>
         </div>

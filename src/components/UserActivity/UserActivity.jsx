@@ -1,28 +1,62 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import "./UserActivity.scss";
+import { format } from "date-fns";
 
-function UserActivity({ data }) {
+const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+        return (
+            <div className="barChart-toolTip">
+                <p>{`${payload[0].value}kg`}</p>
+                <p>{`${payload[1].value}Kcal`}</p>
+            </div>
+        );
+    }
+    return null;
+};
+
+function UserActivity({ data, graphTitle }) {
+    console.log(data);
     return (
-        <ResponsiveContainer width="100%" height={300}>
-            <BarChart
-                data={data}
-                margin={{
-                    top: 5,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                }}
-                barSize={10}
-                barGap={10}
-            >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="day" />
-                <YAxis orientation="right" tickLine={false} />
-                <Tooltip />
-                <Legend verticalAlign="top" align="right" iconType="circle" height={76} />
-                <Bar dataKey="kilogram" fill="black" name="Poids (kg)" radius={[10, 10, 0, 0]} />
-                <Bar dataKey="calories" fill="red" name="Calories brûlées (kCal)" radius={[10, 10, 0, 0]} />
-            </BarChart>
-        </ResponsiveContainer>
+        <div className="userActivity_container">
+            <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                    data={data}
+                    margin={{
+                        top: 30,
+                        right: 25,
+                        left: 40,
+                        bottom: 30,
+                    }}
+                    barSize={8}
+                    barGap={10}
+                >
+                    <CartesianGrid strokeDasharray="2" vertical={false} />
+                    <XAxis dataKey="day" tickLine={false} axisLine={true} fontSize={14} stroke="#9B9EAC" tickMargin={15} tickFormatter={(tick) => format(new Date(tick), "d")} />
+                    <YAxis yAxisId="kilogram" orientation="right" tickLine={false} axisLine={false} fontSize={14} stroke="#9B9EAC" tickMargin={25} domain={["dataMin -8", "dataMax +5"]} />
+                    <YAxis yAxisId="calories" hide domain={["dataMin -160", "dataMax +50"]} />
+                    <Tooltip content={<CustomTooltip />} />
+                    <Legend
+                        verticalAlign="top"
+                        align="right"
+                        iconType="circle"
+                        iconSize={8}
+                        height={75}
+                        fontSize={14}
+                        wrapperStyle={{
+                            top: 25,
+                            right: 0,
+                            fontSize: "14px",
+                        }}
+                        formatter={(value) => <span style={{ color: "#74798C", marginLeft: "10px", marginRight: "30px" }}>{value}</span>}
+                    />
+                    <text x={40} y={35} fill="black" textAnchor="left" dominantBaseline="left" fontSize={15} style={{ fontWeight: 600 }}>
+                        {graphTitle}
+                    </text>
+                    <Bar dataKey="kilogram" fill="#000000" name="Poids (kg)" radius={[50, 50, 0, 0]} yAxisId="kilogram" />
+                    <Bar dataKey="calories" fill="#ff0101" name="Calories brûlées (kCal)" radius={[50, 50, 0, 0]} yAxisId="calories" />
+                </BarChart>
+            </ResponsiveContainer>
+        </div>
     );
 }
 

@@ -1,0 +1,12 @@
+@import "../../style/Utils/Variables.scss";
+
+.barChart-toolTip {
+    background-color: $primary-color;
+    color: $secondary-color;
+}
+
+.userActivity_container {
+    width: 835px;
+    height: 320px;
+    background-color: $quaternary-color;
+}
