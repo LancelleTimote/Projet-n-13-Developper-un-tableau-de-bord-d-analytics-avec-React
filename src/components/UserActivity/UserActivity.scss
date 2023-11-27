@@ -1,12 +1,24 @@
 @import "../../style/Utils/Variables.scss";
 
-.barChart-toolTip {
+.barChart_toolTip {
     background-color: $primary-color;
     color: $secondary-color;
+    padding: 11px 8px;
+    text-align: center;
+    font-size: 7px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+    p {
+        margin: 0px;
+    }
+    &_kg {
+        margin-bottom: 20px !important;
+    }
 }
 
 .userActivity_container {
     width: 835px;
     height: 320px;
     background-color: $quaternary-color;
+    border-radius: 5px;
 }

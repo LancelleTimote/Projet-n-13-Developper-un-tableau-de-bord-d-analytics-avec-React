@@ -1,4 +1,4 @@
-import { getUserData, getUserActivity } from "./callApi";
+import { getUserData, getUserActivity, getUserAverageSession } from "./callApi";
 
 export const getUserDataAPI = async (id) => {
     try {
@@ -16,6 +16,16 @@ export const getUserActivityDataAPI = async (id) => {
         return activityData && activityData.data && activityData.data.sessions ? activityData.data.sessions : [];
     } catch (error) {
         console.error("Erreur lors de la récupération des données d'activité", error);
+        return [];
+    }
+};
+
+export const getUserAverageSessionDataAPI = async (id) => {
+    try {
+        const averageSessionData = await getUserAverageSession(id);
+        return averageSessionData && averageSessionData.data ? averageSessionData.data : [];
+    } catch (error) {
+        console.error("Erreur lors de la récupération des données de sessions moyennes", error);
         return [];
     }
 };

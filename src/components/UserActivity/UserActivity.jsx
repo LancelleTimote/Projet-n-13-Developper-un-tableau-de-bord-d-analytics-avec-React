@@ -5,8 +5,8 @@ import { format } from "date-fns";
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
         return (
-            <div className="barChart-toolTip">
-                <p>{`${payload[0].value}kg`}</p>
+            <div className="barChart_toolTip">
+                <p className="barChart_toolTip_kg">{`${payload[0].value}kg`}</p>
                 <p>{`${payload[1].value}Kcal`}</p>
             </div>
         );
@@ -15,7 +15,6 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 function UserActivity({ data, graphTitle }) {
-    console.log(data);
     return (
         <div className="userActivity_container">
             <ResponsiveContainer width="100%" height="100%">
@@ -32,7 +31,7 @@ function UserActivity({ data, graphTitle }) {
                 >
                     <CartesianGrid strokeDasharray="2" vertical={false} />
                     <XAxis dataKey="day" tickLine={false} axisLine={true} fontSize={14} stroke="#9B9EAC" tickMargin={15} tickFormatter={(tick) => format(new Date(tick), "d")} />
-                    <YAxis yAxisId="kilogram" orientation="right" tickLine={false} axisLine={false} fontSize={14} stroke="#9B9EAC" tickMargin={25} domain={["dataMin -8", "dataMax +5"]} />
+                    <YAxis yAxisId="kilogram" orientation="right" tickLine={false} axisLine={false} fontSize={14} stroke="#9B9EAC" tickMargin={25} domain={["dataMin -8", "dataMax +15"]} />
                     <YAxis yAxisId="calories" hide domain={["dataMin -160", "dataMax +50"]} />
                     <Tooltip content={<CustomTooltip />} />
                     <Legend
