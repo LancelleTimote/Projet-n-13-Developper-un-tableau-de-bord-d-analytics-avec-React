@@ -1,4 +1,5 @@
 import { getUserData, getUserActivity, getUserAverageSession } from "./callApi";
+import { dayOfTheWeek } from "./constants";
 
 export const getUserDataAPI = async (id) => {
     try {
@@ -23,9 +24,20 @@ export const getUserActivityDataAPI = async (id) => {
 export const getUserAverageSessionDataAPI = async (id) => {
     try {
         const averageSessionData = await getUserAverageSession(id);
-        return averageSessionData && averageSessionData.data ? averageSessionData.data : [];
+
+        if (averageSessionData && averageSessionData.data && averageSessionData.data.sessions) {
+            const transformedData = averageSessionData.data.sessions.map((session) => ({
+                ...session,
+                day: dayOfTheWeek[session.day - 1],
+            }));
+
+            return transformedData;
+        } else {
+            return [];
+        }
     } catch (error) {
         console.error("Erreur lors de la récupération des données de sessions moyennes", error);
         return [];
     }
 };
+

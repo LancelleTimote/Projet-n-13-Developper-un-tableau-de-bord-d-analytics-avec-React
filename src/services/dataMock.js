@@ -1,4 +1,5 @@
 import mockData from "../mock/mockData.json";
+import { dayOfTheWeek } from "./constants";
 
 export const getUserDataMock = (id) => {
     const user = mockData.USER_MAIN_DATA.find((user) => user.id === Number(id));
@@ -12,5 +13,15 @@ export const getUserActivityDataMock = (id) => {
 
 export const getUserAverageSessionDataMock = (id) => {
     const userAverageSession = mockData.USER_AVERAGE_SESSIONS.find((data) => data.userId === Number(id));
-    return userAverageSession && userAverageSession.sessions ? userAverageSession.sessions : [];
+
+    if (userAverageSession && userAverageSession.sessions) {
+        const transformedData = userAverageSession.sessions.map((session) => ({
+            ...session,
+            day: dayOfTheWeek[session.day - 1],
+        }));
+
+        return transformedData;
+    } else {
+        return [];
+    }
 };
