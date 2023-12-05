@@ -39,10 +39,10 @@ function Profil() {
                         Bonjour <span className="profil_container_middle_content_greetings_name">{firstName}</span>
                     </h1>
                     <p className="profil_container_middle_content_cheer">Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
-                    <section>
+                    <section className="profil_container_middle_content_graphics">
                         <div>
                             <UserActivity data={userActivityData} graphTitle={graphUserActivityTitle} />
-                            <div>
+                            <div className="profil_container_middle_content_graphics_squares">
                                 <UserAverageSession data={userAverageSessionData} graphTitle={graphUserAverageSessionTitle} />
                                 <UserPerformance />
                             </div>

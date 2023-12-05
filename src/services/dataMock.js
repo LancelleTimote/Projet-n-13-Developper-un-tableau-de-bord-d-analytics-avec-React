@@ -15,10 +15,15 @@ export const getUserAverageSessionDataMock = (id) => {
     const userAverageSession = mockData.USER_AVERAGE_SESSIONS.find((data) => data.userId === Number(id));
 
     if (userAverageSession && userAverageSession.sessions) {
-        const transformedData = userAverageSession.sessions.map((session) => ({
+        let transformedData = userAverageSession.sessions.map((session) => ({
             ...session,
             day: dayOfTheWeek[session.day - 1],
         }));
+
+        const firstDay = { ...transformedData[0], day: dayOfTheWeek[6] };
+        const lastDay = { ...transformedData[transformedData.length - 1], day: dayOfTheWeek[0] };
+
+        transformedData = [firstDay, ...transformedData, lastDay];
 
         return transformedData;
     } else {

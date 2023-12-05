@@ -9,6 +9,10 @@
     }
 }
 
+.recharts-xAxis .recharts-cartesian-axis-tick:last-child {
+    display: none;
+}
+
 .userAverageSession_container {
     width: 258px;
     height: 263px;

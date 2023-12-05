@@ -26,10 +26,15 @@ export const getUserAverageSessionDataAPI = async (id) => {
         const averageSessionData = await getUserAverageSession(id);
 
         if (averageSessionData && averageSessionData.data && averageSessionData.data.sessions) {
-            const transformedData = averageSessionData.data.sessions.map((session) => ({
+            let transformedData = averageSessionData.data.sessions.map((session) => ({
                 ...session,
                 day: dayOfTheWeek[session.day - 1],
             }));
+
+            const firstDay = { ...transformedData[0], day: dayOfTheWeek[6] };
+            const lastDay = { ...transformedData[transformedData.length - 1], day: dayOfTheWeek[0] };
+
+            transformedData = [firstDay, ...transformedData, lastDay];
 
             return transformedData;
         } else {
