@@ -1,4 +1,4 @@
-import { getUserData, getUserActivity, getUserAverageSession } from "./callApi";
+import { getUserData, getUserActivity, getUserAverageSession, getUserPerformance } from "./callApi";
 import { dayOfTheWeek } from "./constants";
 
 export const getUserDataAPI = async (id) => {
@@ -46,3 +46,12 @@ export const getUserAverageSessionDataAPI = async (id) => {
     }
 };
 
+export const getUserPerformanceDataAPI = async (id) => {
+    try {
+        const performanceData = await getUserPerformance(id);
+        return performanceData && performanceData.data ? performanceData.data : [];
+    } catch (error) {
+        console.error("Erreur lors de la récupération des données de performance", error);
+        return [];
+    }
+};

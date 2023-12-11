@@ -30,3 +30,8 @@ export const getUserAverageSessionDataMock = (id) => {
         return [];
     }
 };
+
+export const getUserPerformanceDataMock = (id) => {
+    const userPerformance = mockData.USER_PERFORMANCE.find((data) => data.userId === Number(id));
+    return userPerformance && userPerformance.data ? userPerformance.data : [];
+};

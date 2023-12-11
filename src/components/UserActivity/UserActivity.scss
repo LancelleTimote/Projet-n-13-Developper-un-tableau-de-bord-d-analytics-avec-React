@@ -22,4 +22,13 @@
     background-color: $quaternary-color;
     border-radius: 5px;
     margin-bottom: 30px;
+    position: relative;
+    &_title {
+        position: absolute;
+        margin: 0;
+        font-size: 15px;
+        font-weight: 600;
+        top: 25px;
+        left: 25px;
+    }
 }
