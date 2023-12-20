@@ -6,18 +6,21 @@ import "./Profil.scss";
 import UserActivity from "../../components/UserActivity/UserActivity";
 import UserAverageSession from "../../components/UserAverageSession/UserAverageSession";
 import UserPerformance from "../../components/UserPerformance/UserPerformance";
-import { getUserDataAPI, getUserActivityDataAPI, getUserAverageSessionDataAPI, getUserPerformanceDataAPI } from "../../services/dataApi";
-import { getUserDataMock, getUserActivityDataMock, getUserAverageSessionDataMock, getUserPerformanceDataMock } from "../../services/dataMock";
+import { getUserDataAPI, getUserActivityDataAPI, getUserAverageSessionDataAPI, getUserPerformanceDataAPI, getUserScoreDataAPI } from "../../services/dataApi";
+import { getUserDataMock, getUserActivityDataMock, getUserAverageSessionDataMock, getUserPerformanceDataMock, getUserScoreDataMock } from "../../services/dataMock";
+import UserScore from "../../components/UserScore/UserScore";
 
 function Profil() {
     const [firstName, setFirstName] = useState("");
     const [userActivityData, setUserActivityData] = useState({});
     const [userAverageSessionData, setUserAverageSessionData] = useState([]);
     const [userPerformanceData, setUserPerformanceData] = useState([]);
+    const [userScoreData, setUserScoreData] = useState(0);
     const { id } = useParams();
     const useMockData = true;
     const graphUserActivityTitle = "Activité quotidienne";
     const graphUserAverageSessionTitle = "Durée moyenne des sessions";
+    const graphUserScoreTitle = "Score";
 
     useEffect(() => {
         const fetchData = async () => {
@@ -25,6 +28,8 @@ function Profil() {
             setUserActivityData(useMockData ? getUserActivityDataMock(id) : await getUserActivityDataAPI(id));
             setUserAverageSessionData(useMockData ? getUserAverageSessionDataMock(id) : await getUserAverageSessionDataAPI(id));
             setUserPerformanceData(useMockData ? getUserPerformanceDataMock(id) : await getUserPerformanceDataAPI(id));
+            const scoreData = useMockData ? getUserScoreDataMock(id) : await getUserScoreDataAPI(id);
+            setUserScoreData(scoreData);
         };
 
         fetchData();
@@ -46,6 +51,7 @@ function Profil() {
                             <div className="profil_container_middle_content_graphics_squares">
                                 <UserAverageSession data={userAverageSessionData} graphTitle={graphUserAverageSessionTitle} />
                                 <UserPerformance data={userPerformanceData} />
+                                <UserScore data={userScoreData} graphTitle={graphUserScoreTitle} />
                             </div>
                         </div>
                         <div></div>

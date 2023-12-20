@@ -55,3 +55,14 @@ export const getUserPerformanceDataAPI = async (id) => {
         return [];
     }
 };
+
+export const getUserScoreDataAPI = async (id) => {
+    try {
+        const userData = await getUserData(id);
+        return (userData && userData.data && userData.data.todayScore) ? userData.data.todayScore * 100 :
+               (userData && userData.data && userData.data.score) ? userData.data.score * 100 : 0;
+    } catch (error) {
+        console.error("Erreur lors de la récupération des données du score de l'utilisateur", error);
+        return 0;
+    }
+};

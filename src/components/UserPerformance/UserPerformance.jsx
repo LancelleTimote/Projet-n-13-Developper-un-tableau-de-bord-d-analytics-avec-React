@@ -17,11 +17,11 @@ function UserPerformance({ data }) {
 
     return (
         <div className="userPerformance_container">
-            <ResponsiveContainer width="100%" height={233}>
-                <RadarChart outerRadius={"65%"} data={dataRadar}>
+            <ResponsiveContainer width="100%" height="100%">
+                <RadarChart outerRadius={"70%"} data={dataRadar}>
                     <PolarGrid radialLines={false} stroke="#fff" />
-                    <PolarAngleAxis dataKey="kind" tickLine={false} axisLine={false} tickSize={10} stroke="#fff" fontSize={12} />
-                    <Radar dataKey="value" fill="#FF0101" fillOpacity={0.6} legendType="none" />
+                    <PolarAngleAxis dataKey="kind" tickLine={false} axisLine={false} tickSize={12} stroke="#fff" fontSize={12} />
+                    <Radar dataKey="value" fill="#FF0101" fillOpacity={0.8} legendType="none" />
                 </RadarChart>
             </ResponsiveContainer>
         </div>

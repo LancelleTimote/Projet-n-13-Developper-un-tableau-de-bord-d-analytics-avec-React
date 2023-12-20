@@ -49,9 +49,6 @@ function UserActivity({ data, graphTitle }) {
                         }}
                         formatter={(value) => <span style={{ color: "#74798C", marginLeft: "10px", marginRight: "30px" }}>{value}</span>}
                     />
-                    {/* <text x={40} y={35} fill="black" textAnchor="left" dominantBaseline="left" fontSize={15} style={{ fontWeight: 600 }}>
-                        {graphTitle}
-                    </text> */}
                     <Bar dataKey="kilogram" fill="#000000" name="Poids (kg)" radius={[50, 50, 0, 0]} yAxisId="kilogram" />
                     <Bar dataKey="calories" fill="#ff0101" name="Calories brûlées (kCal)" radius={[50, 50, 0, 0]} yAxisId="calories" />
                 </BarChart>

@@ -35,3 +35,9 @@ export const getUserPerformanceDataMock = (id) => {
     const userPerformance = mockData.USER_PERFORMANCE.find((data) => data.userId === Number(id));
     return userPerformance && userPerformance.data ? userPerformance.data : [];
 };
+
+export const getUserScoreDataMock = (id) => {
+    const user = mockData.USER_MAIN_DATA.find((user) => user.id === Number(id));
+    return (user && user.todayScore) ? user.todayScore * 100 :
+           (user && user.score) ? user.score * 100 : 0;
+};
