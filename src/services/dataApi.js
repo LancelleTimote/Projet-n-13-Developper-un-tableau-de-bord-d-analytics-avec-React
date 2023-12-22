@@ -4,10 +4,10 @@ import { dayOfTheWeek } from "./constants";
 export const getUserDataAPI = async (id) => {
     try {
         const userData = await getUserData(id);
-        return userData && userData.data && userData.data.userInfos ? userData.data.userInfos.firstName : '';
+        return userData && userData.data ? userData.data : {};
     } catch (error) {
         console.error("Erreur lors de la récupération des données de l'utilisateur", error);
-        return '';
+        return {};
     }
 };
 

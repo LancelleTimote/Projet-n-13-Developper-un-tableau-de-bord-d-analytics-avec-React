@@ -3,11 +3,12 @@
 .profil_container {
     &_middle {
         display: flex;
+        flex-direction: row;
         &_content {
             padding: 15px 95px;
             &_greetings {
                 font-size: 48px;
-                margin-bottom: 20px;
+                margin: 30px 0 20px 0;
                 &_name {
                     color: $primary-color;
                 }
@@ -17,9 +18,18 @@
                 margin: 10px 0 65px 0;
             }
             &_graphics {
+                display: flex;
+                flex-direction: row;
                 &_squares {
                     display: flex;
+                    flex-direction: row;
                     gap: 30px;
+                }
+                &_right {
+                    margin-left: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 39.5px;
                 }
             }
         }

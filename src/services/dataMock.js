@@ -3,7 +3,7 @@ import { dayOfTheWeek } from "./constants";
 
 export const getUserDataMock = (id) => {
     const user = mockData.USER_MAIN_DATA.find((user) => user.id === Number(id));
-    return user && user.userInfos && user.userInfos.firstName ? user.userInfos.firstName : '';
+    return user && user ? user : {};
 };
 
 export const getUserActivityDataMock = (id) => {

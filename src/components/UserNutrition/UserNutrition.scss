@@ -1,1 +1,35 @@
 @import "../../style/Utils/Variables.scss";
+
+.userNutrition_container {
+    width: 258px;
+    height: 124px;
+    background-color: $quaternary-color;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    &_iconBox {
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &_text {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-right: 25px;
+        &_data {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        &_energy {
+            font-size: 14px;
+            color: #74798C;
+        }
+    }
+}
