@@ -1,5 +1,6 @@
 import "./UserAverageSession.scss";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Rectangle } from "recharts";
+import PropTypes from "prop-types";
 
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -44,5 +45,15 @@ function UserAverageSession({ data, graphTitle }) {
         </div>
     );
 }
+
+UserAverageSession.propTypes = {
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+            day: PropTypes.string.isRequired,
+            sessionLength: PropTypes.number.isRequired,
+        }),
+    ).isRequired,
+    graphTitle: PropTypes.string.isRequired,
+};
 
 export default UserAverageSession;

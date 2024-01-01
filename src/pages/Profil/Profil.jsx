@@ -17,18 +17,17 @@ import iconLipids from "../../assets/icons/lipids.svg";
 
 function Profil() {
     const [firstName, setFirstName] = useState("");
-    const [userActivityData, setUserActivityData] = useState({});
+    const [userActivityData, setUserActivityData] = useState([]);
     const [userAverageSessionData, setUserAverageSessionData] = useState([]);
     const [userPerformanceData, setUserPerformanceData] = useState([]);
     const [userScoreData, setUserScoreData] = useState(0);
-    const { id } = useParams();
-    const useMockData = true;
     const [nutritionData, setNutritionData] = useState({});
+    const { id } = useParams();
+    const useMockData = false;
 
     useEffect(() => {
         const fetchData = async () => {
             const userData = useMockData ? getUserDataMock(id) : await getUserDataAPI(id);
-            console.log(userData);
             setFirstName(userData.userInfos.firstName);
             setNutritionData(userData.keyData);
             setUserActivityData(useMockData ? getUserActivityDataMock(id) : await getUserActivityDataAPI(id));
@@ -61,10 +60,14 @@ function Profil() {
                             </div>
                         </div>
                         <div className="profil_container_middle_content_graphics_right">
-                            <UserNutrition color="#fbeaea" image={iconCalories} descriptionImage="Logo des Calories" data={nutritionData.calorieCount} acronym="kCal" energy="Calories" />
-                            <UserNutrition color="#e9f4fb" image={iconProteins} descriptionImage="Logo des Proteines" data={nutritionData.proteinCount} acronym="g" energy="Proteines" />
-                            <UserNutrition color="#faf6e5" image={iconCarbohydrates} descriptionImage="Logo des Glucides" data={nutritionData.carbohydrateCount} acronym="g" energy="Glucides" />
-                            <UserNutrition color="#fbeaef" image={iconLipids} descriptionImage="Logo des Lipides" data={nutritionData.lipidCount} acronym="g" energy="Lipides" />
+                            {Object.keys(nutritionData).length > 0 && (
+                                <>
+                                    <UserNutrition color="#fbeaea" image={iconCalories} descriptionImage="Logo des Calories" data={nutritionData.calorieCount} acronym="kCal" energy="Calories" />
+                                    <UserNutrition color="#e9f4fb" image={iconProteins} descriptionImage="Logo des Proteines" data={nutritionData.proteinCount} acronym="g" energy="Proteines" />
+                                    <UserNutrition color="#faf6e5" image={iconCarbohydrates} descriptionImage="Logo des Glucides" data={nutritionData.carbohydrateCount} acronym="g" energy="Glucides" />
+                                    <UserNutrition color="#fbeaef" image={iconLipids} descriptionImage="Logo des Lipides" data={nutritionData.lipidCount} acronym="g" energy="Lipides" />
+                                </>
+                            )}
                         </div>
                     </section>
                 </div>

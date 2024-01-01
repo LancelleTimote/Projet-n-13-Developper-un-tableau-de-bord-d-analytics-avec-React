@@ -1,4 +1,5 @@
 import "./UserNutrition.scss";
+import PropTypes from "prop-types";
 
 function UserNutrition({ color, image, descriptionImage, data, acronym, energy }) {
     return (
@@ -16,5 +17,14 @@ function UserNutrition({ color, image, descriptionImage, data, acronym, energy }
         </div>
     );
 }
+
+UserNutrition.propTypes = {
+    color: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    descriptionImage: PropTypes.string.isRequired,
+    data: PropTypes.number.isRequired,
+    acronym: PropTypes.string.isRequired,
+    energy: PropTypes.string.isRequired,
+};
 
 export default UserNutrition;

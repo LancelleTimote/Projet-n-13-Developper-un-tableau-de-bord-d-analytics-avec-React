@@ -1,5 +1,6 @@
 import "./UserScore.scss";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import PropTypes from "prop-types";
 
 function UserScore({ data, graphTitle }) {
     data = [
@@ -29,5 +30,10 @@ function UserScore({ data, graphTitle }) {
         </div>
     );
 }
+
+UserScore.propTypes = {
+    data: PropTypes.number.isRequired,
+    graphTitle: PropTypes.string.isRequired,
+};
 
 export default UserScore;

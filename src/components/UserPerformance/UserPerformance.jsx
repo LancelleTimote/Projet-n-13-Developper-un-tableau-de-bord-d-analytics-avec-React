@@ -1,5 +1,6 @@
 import "./UserPerformance.scss";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from "recharts";
+import PropTypes from "prop-types";
 
 function UserPerformance({ data }) {
     const originalKinds = ["Cardio", "Energie", "Endurance", "Force", "Vitesse", "Intensité"];
@@ -27,5 +28,24 @@ function UserPerformance({ data }) {
         </div>
     );
 }
+
+UserPerformance.propTypes = {
+    data: PropTypes.oneOfType([
+        PropTypes.arrayOf(
+            PropTypes.shape({
+                value: PropTypes.number.isRequired,
+                kind: PropTypes.number.isRequired,
+            }),
+        ),
+        PropTypes.shape({
+            data: PropTypes.arrayOf(
+                PropTypes.shape({
+                    value: PropTypes.number.isRequired,
+                    kind: PropTypes.number.isRequired,
+                }),
+            ).isRequired,
+        }),
+    ]).isRequired,
+};
 
 export default UserPerformance;

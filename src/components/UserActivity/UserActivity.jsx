@@ -1,6 +1,7 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import "./UserActivity.scss";
 import { format } from "date-fns";
+import PropTypes from "prop-types";
 
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -56,5 +57,16 @@ function UserActivity({ data, graphTitle }) {
         </div>
     );
 }
+
+UserActivity.propTypes = {
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+            day: PropTypes.string.isRequired,
+            kilogram: PropTypes.number.isRequired,
+            calories: PropTypes.number.isRequired,
+        }),
+    ).isRequired,
+    graphTitle: PropTypes.string.isRequired,
+};
 
 export default UserActivity;
