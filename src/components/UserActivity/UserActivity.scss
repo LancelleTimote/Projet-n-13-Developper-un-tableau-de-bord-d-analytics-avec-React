@@ -23,6 +23,10 @@
     border-radius: 5px;
     margin-bottom: 30px;
     position: relative;
+    @media (max-width: 1024px) {
+        width: 560px;
+        height: 240px;
+    }
     &_title {
         position: absolute;
         margin: 0;
@@ -30,5 +34,8 @@
         font-weight: 600;
         top: 25px;
         left: 25px;
+        @media (max-width: 1024px) {
+            font-size: 12px;
+        }
     }
 }

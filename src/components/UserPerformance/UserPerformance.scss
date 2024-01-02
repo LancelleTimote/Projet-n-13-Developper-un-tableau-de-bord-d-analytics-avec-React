@@ -3,6 +3,10 @@
 .userPerformance_container {
     width: 258px;
     height: 263px;
-    background-color: #282D30;
+    background-color: #282d30;
     border-radius: 5px;
+    @media (max-width: 1024px) {
+        width: 166px;
+        height: 180px;
+    }
 }

@@ -6,6 +6,10 @@
     background-color: $quaternary-color;
     border-radius: 5px;
     position: relative;
+    @media (max-width: 1024px) {
+        width: 166px;
+        height: 180px;
+    }
     &_title {
         position: absolute;
         margin: 0;
@@ -13,6 +17,11 @@
         top: 30px;
         left: 35px;
         font-weight: 600;
+        @media (max-width: 1024px) {
+            top: 10px;
+            left: 15px;
+            font-size: 12px;
+        }
     }
     &_text {
         text-align: center;
@@ -20,14 +29,22 @@
         top: 100px;
         left: 110px;
         font-size: 12px;
-        color: #74798C;
+        color: #74798c;
         line-height: 20px;
+        @media (max-width: 1024px) {
+            top: 50px;
+            left: 60px;
+        }
         &_number {
             font-size: 22px;
             color: $tertiary-color;
+            @media (max-width: 1024px) {
+                font-size: 18px;
+            }
         }
     }
-    &_text, &_text_number {
+    &_text,
+    &_text_number {
         font-weight: 600;
     }
 }

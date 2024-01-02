@@ -15,6 +15,10 @@
     background-color: $primary-color;
     border-radius: 5px;
     position: relative;
+    @media (max-width: 1024px) {
+        width: 166px;
+        height: 180px;
+    }
     &_title {
         position: absolute;
         margin: 0;
@@ -23,6 +27,11 @@
         left: 25px;
         color: $quinary-color;
         width: 143px;
+        @media (max-width: 1024px) {
+            font-size: 12px;
+            top: 10px;
+            left: 10px;
+        }
     }
     .recharts-xAxis .recharts-cartesian-axis-tick:last-child {
         display: none;

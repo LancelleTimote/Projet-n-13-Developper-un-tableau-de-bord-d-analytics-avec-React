@@ -10,6 +10,10 @@
     align-items: center;
     justify-content: center;
     gap: 25px;
+    @media (max-width: 1024px) {
+        width: 200px;
+        height: 83px;
+    }
     &_iconBox {
         width: 60px;
         height: 60px;
@@ -26,10 +30,13 @@
         &_data {
             font-size: 20px;
             font-weight: 600;
+            @media (max-width: 1024px) {
+                font-size: 14px;
+            }
         }
         &_energy {
             font-size: 14px;
-            color: #74798C;
+            color: #74798c;
         }
     }
 }

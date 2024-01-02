@@ -16,12 +16,31 @@ function UserPerformance({ data }) {
 
     const dataRadar = reorderData(data, originalKinds, kinds);
 
+    const outerRadius = window.innerWidth <= 1070 ? 50 : 70;
+
+    const chartProps = {
+        data: dataRadar,
+        outerRadius,
+    };
+
+    const tickSize = window.innerWidth <= 1070 ? 8 : 12;
+    const fontSize = window.innerWidth <= 1070 ? 8 : 12;
+
+    const angleAxisProps = {
+        dataKey: "kind",
+        tickLine: false,
+        axisLine: false,
+        tickSize,
+        stroke: "#fff",
+        fontSize,
+    };
+
     return (
         <div className="userPerformance_container">
             <ResponsiveContainer width="100%" height="100%">
-                <RadarChart outerRadius={"70%"} data={dataRadar}>
+                <RadarChart {...chartProps}>
                     <PolarGrid radialLines={false} stroke="#fff" />
-                    <PolarAngleAxis dataKey="kind" tickLine={false} axisLine={false} tickSize={12} stroke="#fff" fontSize={12} />
+                    <PolarAngleAxis {...angleAxisProps} />
                     <Radar dataKey="value" fill="#FF0101" fillOpacity={0.8} legendType="none" />
                 </RadarChart>
             </ResponsiveContainer>

@@ -10,12 +10,29 @@ function UserScore({ data, graphTitle }) {
 
     const colors = ["#ff0000", "#FFF"];
 
+    const innerRadius = window.innerWidth <= 1070 ? 50 : 70;
+    const outerRadius = window.innerWidth <= 1070 ? 60 : 80;
+
+    const chartProps = {
+        data: data,
+        cx: "50%",
+        cy: "50%",
+        innerRadius,
+        outerRadius,
+        cornerRadius: 50,
+        fill: "#8884d8",
+        paddingAngle: 0,
+        dataKey: "value",
+        startAngle: 90,
+        endAngle: 450,
+    };
+
     return (
         <div className="userScore_container">
             <h2 className="userScore_container_title">{graphTitle}</h2>
             <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                    <Pie data={data} cx="50%" cy="50%" innerRadius={70} outerRadius={80} cornerRadius={50} fill="#8884d8" paddingAngle={0} dataKey="value" startAngle={90} endAngle={450}>
+                    <Pie {...chartProps}>
                         {data.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
                         ))}
