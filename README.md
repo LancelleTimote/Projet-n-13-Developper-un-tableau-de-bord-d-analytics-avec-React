@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Projet n°13 : Développer un tableau de bord d'analytics avec React partie front-end
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![GitHub contributors](https://img.shields.io/github/contributors/LancelleTimote/Projet-n-13-Developper-un-tableau-de-bord-d-analytics-avec-React-partie-front-end?style=for-the-badge&color=green)
+![GitHub language count](https://img.shields.io/github/languages/count/LancelleTimote/Projet-n-13-Developper-un-tableau-de-bord-d-analytics-avec-React-partie-front-end?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/LancelleTimote/Projet-n-13-Developper-un-tableau-de-bord-d-analytics-avec-React-partie-front-end?style=for-the-badge)
+![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/LancelleTimote/Projet-n-13-Developper-un-tableau-de-bord-d-analytics-avec-React-partie-front-end?style=for-the-badge)
+![GitHub License](https://img.shields.io/github/license/LancelleTimote/Projet-n-13-Developper-un-tableau-de-bord-d-analytics-avec-React-partie-front-end?style=for-the-badge)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/timote-lancelle-devweb/)
 
-## Available Scripts
+## :mag: Aperçu
 
-In the project directory, you can run:
+![Aperçu du site web](visuel_projet/visuel_projet.png)
 
-### `npm start`
+## :bookmark_tabs: Sommaire
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<ol>
+    <li><a href="#sujet">Sujet</a></li>
+    <li><a href="#demandes_respecter">Demandes à respecter</a></li>
+    <li><a href="#objectifs_projet">Objectifs du projet</a></li>
+    <li><a href="#technologies_utilisees">Technologies utilisées</a></li>
+    <li><a href="#prerequis">Prérequis</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#utilisation_siteweb">Utilisation du site web</a></li>
+    <li><a href="#auteurs_contributeurs">Auteurs et contributeurs</a></li>
+    <li><a href="#licence">Licence</a></li>
+</ol>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## :page_facing_up: 1. Sujet <a name = "sujet"></a>
 
-### `npm test`
+Vous travaillez en tant que développeur chez SportSee, une startup dédiée au coaching sportif.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+En pleine croissance, l’entreprise va aujourd’hui lancer une nouvelle version de la page profil de l’utilisateur.
 
-### `npm run build`
+Cette page va notamment permettre à l’utilisateur de suivre le nombre de sessions réalisées ainsi que le nombre de calories brûlées.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## :memo: 2. Demandes à respecter <a name = "demandes_respecter"></a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-   Développer l'application web en utilisant React et React Router ;
+-   Utiliser de Recharts pour faire les graphiques ;
+-   Utiliser de Fetch ou Axion pour la gestion des calls API ;
+-   Possibilité d'utiliser des données Mock et venant d'une API ;
+-   Définition des contraites sur les données en utilisant les proptypes ;
+-   L'application doit être responsive sur les écrans d’au moins 1024 par 780 pixels ;
+-   Respecter la maquette.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## :checkered_flag: 3. Objectifs du projet <a name = "objectifs_projet"></a>
 
-### `npm run eject`
+-   Apprendre à utiliser React, React Router, Recharts, Fetch, Axios, et les proptypes.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## :computer: 4. Technologies utilisées <a name = "technologies_utilisees"></a>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-   HTML
+-   CSS / Sass
+-   JavaScript / React.js
+-   Git & GitHub
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## :exclamation: 5. Prérequis <a name = "prerequis"></a>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+-   Aucun
 
-## Learn More
+## :wrench: 6. Installation <a name = "installation"></a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-   Cloner ce repository.
+-   Pour installer les différents packages, dans le terminal à partir du dossier front-end, exécuter npm install.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## :question: 7. Utilisation du site web <a name = "utilisation_siteweb"></a>
 
-### Code Splitting
+-   Dans le terminal à partir du dossier front-end, exécuter npm start
+-   L'application est disponible sur : http://localhost:4000/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## :beers: 8. Auteurs et Contributeurs <a name = "auteurs_contributeurs"></a>
 
-### Analyzing the Bundle Size
+Timoté Lancelle : [GitHub](https://github.com/LancelleTimote) / [LinkedIn](https://www.linkedin.com/in/timote-lancelle-devweb/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## :page_with_curl: 9. Licence <a name = "licence"></a>
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Distribué sous la licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus d'informations.
