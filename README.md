@@ -36,10 +36,10 @@ Cette page va notamment permettre à l’utilisateur de suivre le nombre de sess
 ## :memo: 2. Demandes à respecter <a name = "demandes_respecter"></a>
 
 -   Développer l'application web en utilisant React et React Router ;
--   Utiliser de Recharts pour faire les graphiques ;
--   Utiliser de Fetch ou Axion pour la gestion des calls API ;
+-   Utiliser Recharts pour faire les graphiques ;
+-   Utiliser Fetch ou Axios pour la gestion des calls API ;
 -   Possibilité d'utiliser des données Mock et venant d'une API ;
--   Définition des contraites sur les données en utilisant les proptypes ;
+-   Utiliser les proptypes pour définir des contraintes sur l'utilisation des données ;
 -   L'application doit être responsive sur les écrans d’au moins 1024 par 780 pixels ;
 -   Respecter la maquette.
 
