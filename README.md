@@ -65,8 +65,10 @@ Cette page va notamment permettre à l’utilisateur de suivre le nombre de sess
 
 ## :question: 7. Utilisation du site web <a name = "utilisation_siteweb"></a>
 
+-   Suivre les indications d'utilisation pour le back-end : https://github.com/LancelleTimote/Projet-n-13-Developper-un-tableau-de-bord-d-analytics-avec-React-partie-back-end ;
 -   Dans le terminal à partir du dossier front-end, exécuter npm start
 -   L'application est disponible sur : http://localhost:4000/
+-   Si vous voulez accéder à un utilisateur en particulier, allez sur l'onglet profil, normalement des erreurs s'affichent, c'est normal car vous n'avez pas d'utilisateur séléctionné, pour cela dans l'URL saisissez l'id d'un utilisateur, comme par exemple : http://localhost:4000/profil/user/12
 
 ## :beers: 8. Auteurs et Contributeurs <a name = "auteurs_contributeurs"></a>
 
