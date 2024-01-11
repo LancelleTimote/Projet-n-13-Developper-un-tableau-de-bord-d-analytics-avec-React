@@ -1,11 +1,11 @@
 @import "../../style/Utils/Variables.scss";
 
-.accueilPage_mid_text,
+.homePage_mid_text,
 a {
     color: $primary-color;
 }
 
-.accueilPage {
+.homePage {
     height: 100vh;
     display: flex;
     flex-direction: column;
