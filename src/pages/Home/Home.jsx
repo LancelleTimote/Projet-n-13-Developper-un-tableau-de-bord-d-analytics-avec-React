@@ -3,15 +3,15 @@ import Footer from "../../components/Footer/Footer";
 import "./Home.scss";
 import { Link } from "react-router-dom";
 
-function HomePage() {
+function Home() {
     return (
-        <div className="homePage">
+        <div className="home">
             <Header />
-            <div className="homePage_mid">
+            <div className="home_mid">
                 <Footer />
-                <div className="homePage_mid_text">
-                    <span className="homePage_mid_text_welcome">Page d'accueil</span>
-                    <p className="homePage_mid_text_user">Accéder à la page profil d'un utilisateur :</p>
+                <div className="home_mid_text">
+                    <span className="home_mid_text_welcome">Page d'accueil</span>
+                    <p className="home_mid_text_user">Accéder à la page profil d'un utilisateur :</p>
                     <Link to={`/profil/user/12`}>Utilisateur Karl</Link>
                     <Link to={`/profil/user/18`}>Utilisateur Cecilia</Link>
                 </div>
@@ -20,4 +20,4 @@ function HomePage() {
     );
 }
 
-export default HomePage;
+export default Home;
