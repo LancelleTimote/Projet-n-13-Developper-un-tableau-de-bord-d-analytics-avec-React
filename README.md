@@ -1,4 +1,4 @@
-# Projet n°13 : Développer un tableau de bord d'analytics avec React partie front-end
+# Projet n°13 : Développer un tableau de bord d'analytics avec React (partie front-end)
 
 ![GitHub contributors](https://img.shields.io/github/contributors/LancelleTimote/Projet-n-13-Developper-un-tableau-de-bord-d-analytics-avec-React-partie-front-end?style=for-the-badge&color=green)
 ![GitHub language count](https://img.shields.io/github/languages/count/LancelleTimote/Projet-n-13-Developper-un-tableau-de-bord-d-analytics-avec-React-partie-front-end?style=for-the-badge)
